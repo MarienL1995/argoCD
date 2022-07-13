@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ordinatest
+  name: argoordina
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: argoordina
   replicas: 2
   template:
     metadata:
       labels:
-        app: wordpress
+        app: argoordina
     spec:
       containers:
       - name: wordpress
-        image: wordpresss
+        image: wordpress
         ports:
         - containerPort: 8080
