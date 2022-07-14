@@ -1,13 +1,14 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: wordpress-service
+  labels:
+    app.kubernetes.io/instance: argoordina-testapp
+  name: argoordina-service
+  namespace: argoordina
 spec:
-  type: LoadBalancer
-  selector:
-    app: wordpress
   ports:
-    - name: http
+    - port: 80
       protocol: TCP
-      port: 80
       targetPort: 80
+  selector:
+    app: myapp
